@@ -88,8 +88,8 @@ public class JBossLogSlackHandler extends Handler {
     private StringBuffer buildMessage(String message) throws UnsupportedEncodingException {
         Map<String,String> arguments = new HashMap<String, String>();
         arguments.put("token", token);
-        arguments.put("channel", "logs-gdocprocessos");
-        arguments.put("text", channel == null | channel.isEmpty() ? System.getenv("jboss.server.name") :  channel);
+        arguments.put("channel", channel == null | channel.isEmpty() ? System.getenv("jboss.server.name") :  channel);
+        arguments.put("text", message);
         arguments.put("as_user", asUser);
         arguments.put("username", username);
 
